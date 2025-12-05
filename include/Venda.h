@@ -9,5 +9,5 @@ private:
     int idCliente;
     string data;
 public:
-    Venda::Venda(float subTotal, int idFuncionario, int idCliente, string data) : subTotal(subTotal), idFuncionario(idFuncionario), idCliente(idCliente), data(data) {}
+    Venda(float subTotal, int idFuncionario, int idCliente, string data) : subTotal(subTotal), idFuncionario(idFuncionario), idCliente(idCliente), data(data) {}
 };

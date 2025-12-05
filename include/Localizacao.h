@@ -6,5 +6,5 @@ class Localizacao : public Base {
 private:
     string prateleira;
 public:
-    Localizacao::Localizacao(string prateleira) : prateleira(prateleira) {}
+    Localizacao(string prateleira) : prateleira(prateleira) {}
 };

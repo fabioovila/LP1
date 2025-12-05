@@ -8,5 +8,5 @@ private:
     int idFornecedor;
     float valor;
 public:
-    pedidoCompra::pedidoCompra(int idFornecedor, float valor) : idFornecedor(idFornecedor), valor(valor) {}
+    pedidoCompra(int idFornecedor, float valor) : idFornecedor(idFornecedor), valor(valor) {}
 };

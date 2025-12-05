@@ -7,5 +7,6 @@ private:
     string nome;
     string localizacao;
 public:
-    Categoria::Categoria(string nome, string localizacao) : nome(nome), localizacao(localizacao) {}
+    Categoria(string nome, string localizacao) : nome(nome), localizacao(localizacao) {}
+    void exibirCategoria() const;
 };

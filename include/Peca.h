@@ -8,6 +8,6 @@ private:
     float preco;
     string categoria;
 public:
-    Peca::Peca(string nome, float preco, string categoria) : nome(nome), preco(preco), categoria(categoria) {}
+    Peca(string nome, float preco, string categoria) : nome(nome), preco(preco), categoria(categoria) {}
 
 };
