@@ -7,9 +7,11 @@ using namespace std;
 
 class Base {
     private:
-        const int id;
+        static int num;
     public:
-        Base(int novoId);
+        static int recuperaNum();
+    private:
+    public:
+        Base(int num);
         virtual ~Base() = 0;
-        int getId() const;  
 };

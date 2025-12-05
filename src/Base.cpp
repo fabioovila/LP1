@@ -1,14 +1,14 @@
 #include "Base.h"
 
-Base::Base(int novoId) : id(novoId) 
-{
-    if (novoId <= 0) {
-        throw invalid_argument("ID deve ter um valor positivo");
-    }
+int Base::num = 0;
+
+Base::Base(int num) : num(num) {
+    num++;
 }
 
 Base::~Base() {}
 
-int Base::getId() const {
-    return id;
+int Base::recuperaNum()
+{
+    return num;
 }
