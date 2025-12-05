@@ -8,6 +8,7 @@ private:
     int idFuncionario;
     int idCliente;
     string dataCompra;
+    // preciso implementar talvez um vector de pair para fazer a lista de itens e seus precos e depois calcular o valor total?
 public:
     Venda(float subTotal, int idFuncionario, int idCliente, string dataCompra) : subTotal(subTotal), idFuncionario(idFuncionario), idCliente(idCliente), dataCompra(dataCompra) {}
     
