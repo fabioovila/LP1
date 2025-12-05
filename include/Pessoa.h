@@ -13,4 +13,7 @@ public:
     
     string getNome() const;
     string getTelefone() const;
+
+    void setNome(const string novoNome);
+    void setTelefone(const string novoTelefone);
 };

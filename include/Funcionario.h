@@ -7,5 +7,7 @@ private:
     string login;
 public:
     Funcionario(string nome, string telefone, string login) : Pessoa(nome, telefone), login(login){}
+    
     string getLogin() const;
+    void setLogin(const string novoLogin);
 };

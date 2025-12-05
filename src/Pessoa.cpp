@@ -15,3 +15,15 @@ string Pessoa::getTelefone() const
 {
     return telefone;
 }
+
+void Pessoa::setNome(const string novoNome)
+{
+    // ainda tenho que implementar tratamento de excecoes
+    nome = novoNome;
+}
+
+void Pessoa::setTelefone(const string novoTelefone)
+{
+    // ainda tenho que implementar tratamento de excecoes
+    telefone = novoTelefone;
+}

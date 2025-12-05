@@ -19,3 +19,13 @@ string Venda::getDataCompra() const
 {
     return dataCompra;
 }
+
+void Venda::setSubTotal(const float novoSubTotal)
+{
+    subTotal = novoSubTotal;
+}
+
+void Venda::setDataCompra(const string novaDataCompra)
+{
+    dataCompra = novaDataCompra;
+}

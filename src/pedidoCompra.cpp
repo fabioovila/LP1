@@ -9,3 +9,8 @@ float pedidoCompra::getValor() const
 {
     return valor;
 }
+
+void pedidoCompra::setValor(const float novoValor)
+{
+    valor = novoValor;
+}

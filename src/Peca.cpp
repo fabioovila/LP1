@@ -14,3 +14,18 @@ string Peca::getCategoria() const
 {
     return categoria;
 }
+
+void Peca::setNome(const string novoNome)
+{
+    nome = novoNome;
+}
+
+void Peca::setPreco(const float novoPreco)
+{
+    preco = novoPreco;
+}
+
+void Peca::setCategoria(const string novaCategoria)
+{
+    categoria = novaCategoria;
+}

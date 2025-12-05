@@ -15,5 +15,4 @@ public:
     virtual ~Base() = 0;
 
     int getId() const;
-
 };
