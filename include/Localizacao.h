@@ -7,4 +7,5 @@ private:
     string prateleira;
 public:
     Localizacao(string prateleira) : prateleira(prateleira) {}
+    string getPrateleira() const;
 };

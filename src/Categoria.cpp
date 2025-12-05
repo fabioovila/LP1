@@ -1,6 +1,11 @@
 #include "include/Categoria.h"
 
-void Categoria::exibirCategoria() const
+string Categoria::getNome() const 
 {
-    cout << "A Categoria de Itens " << nome << " está localizada na prateleira " << localizacao << endl;
+    return nome;
+}
+
+string Categoria::getLocalizacao() const
+{
+    return localizacao;
 }

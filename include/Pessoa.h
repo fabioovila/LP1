@@ -13,6 +13,4 @@ public:
     
     string getNome() const;
     string getTelefone() const;
-
-    void exibirPessoa() const;
 };

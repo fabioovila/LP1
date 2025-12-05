@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Base.h"
-#include "Fornecedor.h"
 
 class pedidoCompra : public Base {
 private:
@@ -9,4 +8,6 @@ private:
     float valor;
 public:
     pedidoCompra(int idFornecedor, float valor) : idFornecedor(idFornecedor), valor(valor) {}
+    int getIdFornecedor() const;
+    float getValor() const;
 };

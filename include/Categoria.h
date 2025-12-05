@@ -8,5 +8,6 @@ private:
     string localizacao;
 public:
     Categoria(string nome, string localizacao) : nome(nome), localizacao(localizacao) {}
-    void exibirCategoria() const;
+    string getNome() const;
+    string getLocalizacao() const;
 };

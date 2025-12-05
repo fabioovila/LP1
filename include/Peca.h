@@ -9,5 +9,7 @@ private:
     string categoria;
 public:
     Peca(string nome, float preco, string categoria) : nome(nome), preco(preco), categoria(categoria) {}
-
+    string getNome() const;
+    float getPreco() const;
+    string getCategoria() const;
 };

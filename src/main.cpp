@@ -19,7 +19,7 @@ int main()
     cin >> nome >> telefone;
     
     Pessoa pessoa(nome, telefone);
-    pessoa.exibirPessoa();
+    cout << pessoa.getNome() << " | " << pessoa.getTelefone() << endl; 
     
     // Pessoa pessoa("Fabio", "12345678");
     // Pessoa pessoa2("Pettra", "23456781");

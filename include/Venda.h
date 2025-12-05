@@ -7,7 +7,11 @@ private:
     float subTotal;
     int idFuncionario;
     int idCliente;
-    string data;
+    string dataCompra;
 public:
-    Venda(float subTotal, int idFuncionario, int idCliente, string data) : subTotal(subTotal), idFuncionario(idFuncionario), idCliente(idCliente), data(data) {}
+    Venda(float subTotal, int idFuncionario, int idCliente, string dataCompra) : subTotal(subTotal), idFuncionario(idFuncionario), idCliente(idCliente), dataCompra(dataCompra) {}
+    float getSubTotal() const;
+    int getIdFuncionario() const;
+    int getIdCliente() const;
+    string getDataCompra() const;
 };
