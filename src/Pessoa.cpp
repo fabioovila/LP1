@@ -15,3 +15,8 @@ string Pessoa::getTelefone() const
 {
     return this->telefone;
 }
+
+void Pessoa::exibirPessoa() const 
+{
+    cout << getNome() << " tem id = " << getId() << " e tem telefone = " << getTelefone() << endl;
+}
