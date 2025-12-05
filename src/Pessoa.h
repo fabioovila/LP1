@@ -9,9 +9,8 @@ private:
     string telefone;
 public:
     Pessoa(const string nome, const string telefone);
-
     virtual ~Pessoa();
-
-    const string getNome() const;
-    const string getTelefone() const;
+    
+    string getNome() const;
+    string getTelefone() const;
 };

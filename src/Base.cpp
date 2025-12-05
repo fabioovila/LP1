@@ -1,14 +1,14 @@
 #include "Base.h"
 
-int Base::num = 0;
+int Base::proxId = 1;
 
-Base::Base(int num) : num(num) {
-    num++;
-}
+Base::Base() :id(proxId++)
+{}
 
-Base::~Base() {}
+Base::~Base() 
+{}
 
-int Base::recuperaNum()
+int Base::getId() const 
 {
-    return num;
+    return id;
 }

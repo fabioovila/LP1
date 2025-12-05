@@ -6,12 +6,14 @@
 using namespace std;
 
 class Base {
-    private:
-        static int num;
-    public:
-        static int recuperaNum();
-    private:
-    public:
-        Base(int num);
-        virtual ~Base() = 0;
+private:
+    static int proxId;
+    const int id;
+
+public:
+    Base();
+    virtual ~Base() = 0;
+
+    int getId() const;
+
 };
