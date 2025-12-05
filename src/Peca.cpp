@@ -17,15 +17,18 @@ string Peca::getCategoria() const
 
 void Peca::setNome(const string novoNome)
 {
+    // ainda tenho que implementar tratamento de excecoes
     nome = novoNome;
 }
 
 void Peca::setPreco(const float novoPreco)
 {
+    // ainda tenho que implementar tratamento de excecoes
     preco = novoPreco;
 }
 
 void Peca::setCategoria(const string novaCategoria)
 {
+    // ainda tenho que implementar tratamento de excecoes
     categoria = novaCategoria;
 }

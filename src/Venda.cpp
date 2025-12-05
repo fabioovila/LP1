@@ -22,10 +22,12 @@ string Venda::getDataCompra() const
 
 void Venda::setSubTotal(const float novoSubTotal)
 {
+    // ainda tenho que implementar tratamento de excecoes
     subTotal = novoSubTotal;
 }
 
 void Venda::setDataCompra(const string novaDataCompra)
 {
+    // ainda tenho que implementar tratamento de excecoes
     dataCompra = novaDataCompra;
 }

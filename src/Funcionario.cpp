@@ -7,5 +7,6 @@ string Funcionario::getLogin() const
 
 void Funcionario::setLogin(const string novoLogin)
 {
+    // ainda tenho que implementar tratamento de excecoes
     login = novoLogin;
 }

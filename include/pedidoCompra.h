@@ -14,4 +14,4 @@ public:
 
     void setValor(const float novoValor);
     // sem set pros Ids pois ele eh automatico
-};
+};  
