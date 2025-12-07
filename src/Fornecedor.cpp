@@ -1,4 +1,4 @@
-#include "include/Fornecedor.h"
+#include "Fornecedor.h"
 
 string Fornecedor::getTipo() const
 {

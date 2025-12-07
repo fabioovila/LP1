@@ -1,4 +1,4 @@
-#include "include/Categoria.h"
+#include "Categoria.h"
 
 string Categoria::getNome() const 
 {

@@ -1,4 +1,4 @@
-#include "include/Funcionario.h"
+#include "Funcionario.h"
 
 string Funcionario::getLogin() const 
 {

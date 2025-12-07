@@ -1,4 +1,4 @@
-#include "include/Peca.h"
+#include "Peca.h"
 
 string Peca::getNome() const
 {

@@ -1,4 +1,4 @@
-#include "include/pedidoCompra.h"
+#include "pedidoCompra.h"
 
 int pedidoCompra::getIdFornecedor() const
 {
