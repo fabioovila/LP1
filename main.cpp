@@ -68,6 +68,42 @@ bool validarLogin()
     return false;
 }
 
+
+void Categorias() {}
+void Clientes() {}
+void Fornecedores() {}
+
+void Funcionarios(Funcionario user) 
+{
+    // int opcaofuncionario = -1;
+
+    // while (opcaofuncionario != 0) 
+    // {
+    //     menuGenerico("Funcionário");
+    //     cin >> opcaofuncionario;
+        
+    //     switch (opcaofuncionario) {
+        //         case 1:
+        //             user.criar();
+        //             break; 
+        //         case 2:
+        //             user.ler();
+        //             break;
+        //         case 3:
+    //             user.atualizar();
+    //             break;
+    //         case 4:
+    //             user.excluir();
+    //             break;
+    //     }
+    // }
+}
+
+void Localizacoes() {}
+void Pecas() {}
+void PedidosCompra() {}
+void Vendas() {}
+
 void menuUsuario()
 {
     cout << "\n[1] - Categorias" << "\n[2] - Clientes";
@@ -87,53 +123,8 @@ void menuGenerico(string setor)
     cout << "\nQual opcao desse setor deseja acessar? ";
 }
 
-void Categorias() {}
-void Clientes() {}
-void Fornecedores() {}
-
-void Funcionarios(Funcionario user) 
+void iniciarMenu(Funcionario user)
 {
-    int opcaofuncionario = -1;
-
-    while (opcaofuncionario != 0) 
-    {
-        menuGenerico("Funcionário");
-        cin >> opcaofuncionario;
-        
-        switch (opcaofuncionario) {
-            case 1:
-                user.criar();
-                break; 
-            case 2:
-                user.ler();
-                break;
-            case 3:
-                user.atualizar();
-                break;
-            case 4:
-                user.excluir();
-                break;
-        }
-    }
-}
-
-void Localizacoes() {}
-void Pecas() {}
-void PedidosCompra() {}
-void Vendas() {}
-
-int main() 
-{
-    limparTerminal();
-
-    // suposto validador de Login
-    while (!validado) validado = validarLogin();
-    
-    Funcionario userLogado(nomeUsuario, telefoneUsuario, loginUsuario);
-    
-    // mostrando polimorfismo abaixo
-    cout << "Bem vindo, " << userLogado.getNome() << "!" << endl; 
-
     int opcao = -1;
     while (opcao != 0)
     {
@@ -157,7 +148,7 @@ int main()
                 break;
             case 4:
                 cout << "Setor Funcionarios selecionado" << endl;
-                Funcionarios(userLogado);
+                Funcionarios(user);
                 break;
             case 5:
                 cout << "Setor Localização selecionado" << endl;
@@ -176,12 +167,27 @@ int main()
                 Vendas();
                 break;
             case 0:
-                continue;
+                break;
             default:
                 cout << "Nenhum setor correspondente (default)" << endl;
                 break;
         }
     }
+}
+
+int main() 
+{
+    limparTerminal();
+
+    // suposto validador de Login
+    while (!validado) validado = validarLogin();
+    
+    Funcionario userLogado(nomeUsuario, telefoneUsuario, loginUsuario);
+    
+    // mostrando polimorfismo abaixo
+    cout << "Bem vindo, " << userLogado.getNome() << "!" << endl; 
+
+    iniciarMenu(userLogado);
 
     cout << "Programa encerrado! :)" << endl;
 }
