@@ -28,6 +28,7 @@ clean:
 	rm -rf $(OBJS) $(EXECUTAVEL)
 
 run: $(EXECUTAVEL)
+	clear
 	./$(EXECUTAVEL)
 
 # all: main.o Base.o Categoria.o Cliente.o Fornecedor.o Funcionario.o Localizacao.o Peca.o pedidoCompra.o Pessoa.o Venda.o
