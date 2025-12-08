@@ -25,7 +25,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(OBJ_DIR)
 	g++ $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR) $(EXECUTAVEL)
+	rm -rf $(OBJS) $(EXECUTAVEL)
 
 run: $(EXECUTAVEL)
 	./$(EXECUTAVEL)
