@@ -10,3 +10,4 @@ void Fornecedor::setTipo(const string novoTipo)
     // ainda tenho que implementar tratamento de excecoes
     tipo = novoTipo;
 }
+

@@ -16,11 +16,16 @@
 using namespace std;
 
 string nomeUsuario;
-string permissaoUsuario;
+
 bool validado = false;
 
 const string ESCURO = "\033[40m\033[37m";
 const string CLARO = "\033[47m\033[30m";
+
+void limparTerminal()
+{
+    cout << "\033[2J\033[1;1H";
+}
 
 void aplicarTema(const string tema) 
 {
@@ -37,43 +42,35 @@ string validarLogin()
     cin.ignore();
 
     // cout << "\ntentativa = " << tentativa << endl << endl;
-    ifstream file("texts/output.txt");
+    ifstream file("texts/usuarios.txt"); // READ ONLY
     string linha;
     
     while (getline(file, linha)) {
-        size_t separacaoLoginDados = linha.find(':');
-        string login_arquivo = linha.substr(0, separacaoLoginDados);
+        size_t separacaoLoginTema = linha.find(';');
+        string login_arquivo = linha.substr(0, separacaoLoginTema);
         
         if (login_arquivo == tentativa) {
-            nomeUsuario = login_arquivo;
-
-            string dadosPermissaoTema = linha.substr(separacaoLoginDados + 1);
-
-            size_t posLogin = dadosPermissaoTema.find(';');
-
-            string permissao = dadosPermissaoTema.substr(0, posLogin);
-            string tema = dadosPermissaoTema.substr(posLogin + 1);
-
+            string tema = linha.substr(separacaoLoginTema + 1);
+            
             aplicarTema(tema);
-
+            
             cout << "\nBem vindo, " << login_arquivo << "!" << endl;
-            cout << "\nVocê tem nível de: " << permissao << endl;
 
             validado = true;
-            return permissao;
+            return nomeUsuario;
         }
     }
-
     cout << "\nLogin não encontrado :(" << endl;
     return "";
 }
 
 int main() 
 {
+    limparTerminal();
     // suposto validador de Login
-    while (!validado) permissaoUsuario = validarLogin();
+    while (!validado) nomeUsuario = validarLogin();
 
-    cout << "\n e aí, vamos codar?" << endl;
+
     // string nome, telefone;
     // cin >> nome >> telefone;
     

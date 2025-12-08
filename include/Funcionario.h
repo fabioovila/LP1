@@ -11,3 +11,4 @@ public:
     string getLogin() const;
     void setLogin(const string novoLogin);
 };
+
