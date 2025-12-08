@@ -68,6 +68,14 @@ bool validarLogin()
     return false;
 }
 
+void menuUsuario()
+{
+    cout << "\n[1] - Categorias" << "\n[2] - Cliente";
+    cout << "\n[3] - Fornecedor" << "\n[4] - Funcionario";
+    cout << "\n[5] - Localizacao" << "\n[6] - Peça";
+    cout << "\n[7] - Pedido de Compra" << "\n[8] - Venda";
+    cout << "\n[0] - Encerrar Programa" << endl;
+}  
 int main() 
 {
     limparTerminal();
@@ -78,4 +86,48 @@ int main()
     Funcionario user(nomeUsuario, telefoneUsuario, loginUsuario);
     
     cout << "Bem vindo, " << user.getNome() << "!" << endl;
+
+    int opcao = -1;
+
+    while (opcao != 0)
+    {
+        menuUsuario();
+        cout << "\nQual menu deseja acessar agora, " << nomeUsuario << "? ";
+        cin >> opcao;
+        cout << endl;
+        
+        switch (opcao) {
+            case 1:
+                cout << "Setor Categorias selecionado" << endl;
+                break; 
+            case 2:
+                cout << "Setor Clientes selecionado" << endl;
+                break;
+            case 3:
+                cout << "Setor Fornecedores selecionado" << endl;
+                break;
+            case 4:
+                cout << "Setor Funcionarios selecionado" << endl;
+                break;
+            case 5:
+                cout << "Setor Localização selecionado" << endl;
+                break;
+            case 6:
+                cout << "Setor Peças selecionado" << endl;
+                break;
+            case 7:
+                cout << "Setor Pedido de Compra selecionado" << endl;
+                break;
+            case 8:
+                cout << "Setor Vendas selecionado" << endl;
+                break;
+            case 0:
+                continue;
+            default:
+                cout << "Nenhum setor correspondente (default)" << endl;
+                break;
+        }
+    }
+
+    cout << "\nPrograma encerrado! :)" << endl;
 }
