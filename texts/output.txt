@@ -1,0 +1,3 @@
+fabioovila:Administrador;escuro
+luizinhofotocopia:Usuário;claro
+vittinhodosus:Usuário;claro

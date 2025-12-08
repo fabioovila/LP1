@@ -16,6 +16,7 @@
 using namespace std;
 
 string nomeUsuario;
+string permissaoUsuario;
 bool validado = false;
 
 const string ESCURO = "\033[40m\033[37m";
@@ -36,7 +37,7 @@ string validarLogin()
     cin.ignore();
 
     // cout << "\ntentativa = " << tentativa << endl << endl;
-    ifstream file("output.txt");
+    ifstream file("texts/output.txt");
     string linha;
     
     while (getline(file, linha)) {
@@ -63,14 +64,13 @@ string validarLogin()
         }
     }
 
-    cout << "Login não encontrado :(" << endl;
+    cout << "\nLogin não encontrado :(" << endl;
+    return "";
 }
 
 int main() 
 {
-    // primeira coisa que tem que ter: login de funcionario(usuario) pra carregar nome de exibição e tema claro/escuro
-    string permissaoUsuario;
-
+    // suposto validador de Login
     while (!validado) permissaoUsuario = validarLogin();
 
     cout << "\n e aí, vamos codar?" << endl;
