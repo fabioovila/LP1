@@ -8,7 +8,8 @@ FLAGS = -Wall -Wextra -I$(INCLUDE_DIR)
 #se eu criar um novo arquivo .h e .cpp com mesmo nome, adicionar " \ $(OBJ_DIR)/[nomenovo].o"
 OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/Base.o $(OBJ_DIR)/Categoria.o $(OBJ_DIR)/Cliente.o \
        $(OBJ_DIR)/Fornecedor.o $(OBJ_DIR)/Funcionario.o $(OBJ_DIR)/Localizacao.o \
-       $(OBJ_DIR)/Peca.o $(OBJ_DIR)/pedidoCompra.o $(OBJ_DIR)/Pessoa.o $(OBJ_DIR)/Venda.o
+       $(OBJ_DIR)/Peca.o $(OBJ_DIR)/pedidoCompra.o $(OBJ_DIR)/Pessoa.o $(OBJ_DIR)/Venda.o \
+	   $(OBJ_DIR)/Funcs.o
 
 all: $(EXECUTAVEL)
 
