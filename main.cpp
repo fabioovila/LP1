@@ -68,6 +68,15 @@ bool validarLogin()
     return false;
 }
 
+void menuGenerico(string setor) 
+{
+    cout << "\n[1] - Criar " << setor;
+    cout << "\n[2] - Elencar " << setor << "s";
+    cout << "\n[3] - Atualizar " << setor;
+    cout << "\n[4] - Excluir " << setor;
+
+    cout << "\nQual opcao desse setor deseja acessar? ";
+}
 
 void Categorias() {}
 void Clientes() {}
@@ -113,15 +122,6 @@ void menuUsuario()
     cout << "\n[0] - Encerrar Programa" << endl;
 }  
 
-void menuGenerico(string setor) 
-{
-    cout << "\n[1] - Criar " << setor;
-    cout << "\n[2] - Elencar " << setor << "s";
-    cout << "\n[3] - Atualizar " << setor;
-    cout << "\n[4] - Excluir " << setor;
-
-    cout << "\nQual opcao desse setor deseja acessar? ";
-}
 
 void iniciarMenu(Funcionario user)
 {
