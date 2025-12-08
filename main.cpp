@@ -15,7 +15,7 @@
 
 using namespace std;
 
-string nomeUsuario;
+string nomeUsuario, telefoneUsuario, loginUsuario, temaUsuario;
 
 bool validado = false;
 
@@ -33,7 +33,7 @@ void aplicarTema(const string tema)
     if (tema == "claro") cout << CLARO;
 }
 
-string validarLogin()
+bool validarLogin()
 {
     cout << "\nInsira seu login: ";
     
@@ -42,43 +42,40 @@ string validarLogin()
     cin.ignore();
 
     // cout << "\ntentativa = " << tentativa << endl << endl;
-    ifstream file("texts/usuarios.txt"); // READ ONLY
+    ifstream file("texts/usuarios.txt");
     string linha;
     
     while (getline(file, linha)) {
-        size_t separacaoLoginTema = linha.find(';');
-        string login_arquivo = linha.substr(0, separacaoLoginTema);
+        size_t doispontos = linha.find(':');
+        string login_arquivo = linha.substr(0, doispontos);
         
         if (login_arquivo == tentativa) {
-            string tema = linha.substr(separacaoLoginTema + 1);
-            
-            aplicarTema(tema);
-            
-            cout << "\nBem vindo, " << login_arquivo << "!" << endl;
+            loginUsuario = login_arquivo;
 
-            validado = true;
-            return nomeUsuario;
+            size_t virgula = linha.find(',');
+            size_t pontoevirgula = linha.find(';');
+            
+            nomeUsuario = linha.substr(doispontos + 1, virgula - (doispontos + 1));
+            telefoneUsuario = linha.substr(virgula + 1, pontoevirgula - (virgula + 1));
+            temaUsuario = linha.substr(pontoevirgula + 1);
+            
+            aplicarTema(temaUsuario);
+            
+            return true;
         }
     }
     cout << "\nLogin não encontrado :(" << endl;
-    return "";
+    return false;
 }
 
 int main() 
 {
     limparTerminal();
+
     // suposto validador de Login
-    while (!validado) nomeUsuario = validarLogin();
-
-
-    // string nome, telefone;
-    // cin >> nome >> telefone;
+    while (!validado) validado = validarLogin();
     
-    // Pessoa pessoa(nome, telefone);
-    // cout << pessoa.getNome() << " | " << pessoa.getTelefone() << endl; 
+    Funcionario user(nomeUsuario, telefoneUsuario, loginUsuario);
     
-    // Pessoa pessoa("Fabio", "12345678");
-    // Pessoa pessoa2("Pettra", "23456781");
-
-    // pessoa2.exibirPessoa();
+    cout << "Bem vindo, " << user.getNome() << "!" << endl;
 }

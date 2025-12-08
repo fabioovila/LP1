@@ -1,1 +1,2 @@
-fabioovila;escuro
+# ordem: login, nome, telefone, tema (Usuario)
+fabioovila:Fabio,12345678;escuro
