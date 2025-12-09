@@ -20,4 +20,6 @@ public:
     void setSubTotal(const float novoSubTotal);
     void setDataCompra(const string novaDataCompra);
     // sem set pros Ids pois ele eh automatico
+
+    virtual string toString() const override;
 };

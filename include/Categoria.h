@@ -13,4 +13,6 @@ public:
     string getLocalizacao() const;
     void setNome(const string novoNome);
     void setLocalizacao(const string novaLocalizacao);
+
+    virtual string toString() const override;
 };

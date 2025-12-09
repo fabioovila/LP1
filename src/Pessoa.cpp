@@ -1,5 +1,6 @@
 #include "Pessoa.h"
 #include "Base.h"
+#include <sstream>
 
 Pessoa::Pessoa(const string nome, const string telefone): Base(), nome(nome), telefone(telefone)
 {}
@@ -26,4 +27,10 @@ void Pessoa::setTelefone(const string novoTelefone)
 {
     // ainda tenho que implementar tratamento de excecoes
     telefone = novoTelefone;
+}
+
+string Pessoa::toString() const {
+    stringstream ss;
+    ss << "ID: " << getId() << " | Nome: " << getNome() << " | Tel: " << getTelefone();
+    return ss.str();
 }

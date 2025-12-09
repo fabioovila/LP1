@@ -10,6 +10,8 @@ private:
 public:
     Peca(string nome, float preco, string categoria) : nome(nome), preco(preco), categoria(categoria) {}
     
+    virtual ~Peca() override;
+
     string getNome() const;
     float getPreco() const;
     string getCategoria() const;
@@ -17,4 +19,6 @@ public:
     void setNome(const string novoNome);
     void setPreco(const float novoPreco);
     void setCategoria(const string novaCategoria);
+    
+    virtual string toString() const override;
 };

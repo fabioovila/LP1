@@ -16,4 +16,6 @@ public:
 
     void setNome(const string novoNome);
     void setTelefone(const string novoTelefone);
+
+    virtual string toString() const override;
 };

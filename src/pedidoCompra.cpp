@@ -1,4 +1,11 @@
 #include "pedidoCompra.h"
+#include <sstream>
+
+string pedidoCompra::toString() const {
+    stringstream ss;
+    ss << "ID: " << getId() << " | Fornecedor ID: " << idFornecedor << " | Valor Total: R$" << valor;
+    return ss.str();
+}
 
 int pedidoCompra::getIdFornecedor() const
 {
@@ -14,9 +21,4 @@ void pedidoCompra::setValor(const float novoValor)
 {
     // ainda tenho que implementar tratamento de excecoes
     valor = novoValor;
-}
-
-void PedidosCompra() 
-{
-    
 }

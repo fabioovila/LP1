@@ -1,4 +1,13 @@
 #include "Peca.h"
+#include <sstream>
+
+Peca::~Peca() {}
+
+string Peca::toString() const {
+    stringstream ss;
+    ss << "ID: " << getId() << " | Nome: " << nome << " | Preco: R$" << preco << " | Categoria: " << categoria;
+    return ss.str();
+}
 
 string Peca::getNome() const
 {
@@ -31,9 +40,4 @@ void Peca::setCategoria(const string novaCategoria)
 {
     // ainda tenho que implementar tratamento de excecoes
     categoria = novaCategoria;
-}
-
-void Pecas() 
-{
-    
 }

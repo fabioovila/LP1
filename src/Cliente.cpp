@@ -1,4 +1,13 @@
 #include "Cliente.h"
+#include <sstream>
+
+Cliente::~Cliente() {}
+
+string Cliente::toString() const {
+    stringstream ss;
+    ss << Pessoa::toString() << " | Preferencia: " << getPreferencia();
+    return ss.str();
+}
 
 string Cliente::getPreferencia() const 
 {
@@ -9,9 +18,4 @@ void Cliente::setPreferencia(const string novaPreferencia)
 {
     // ainda tenho que implementar tratamento de excecoes
     preferencia = novaPreferencia;
-}
-
-void Clientes() 
-{
-    
 }

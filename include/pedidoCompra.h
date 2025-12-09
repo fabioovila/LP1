@@ -15,4 +15,6 @@ public:
 
     void setValor(const float novoValor);
     // sem set pros Ids pois ele eh automatico
+
+    virtual string toString() const override;
 };  

@@ -1,4 +1,12 @@
 #include "Venda.h"
+#include <sstream>
+
+string Venda::toString() const {
+    stringstream ss;
+    ss << "ID: " << getId() << " | Data: " << dataCompra << " | Total: R$" << subTotal 
+       << " | Func. ID: " << idFuncionario << " | Cliente ID: " << idCliente;
+    return ss.str();
+}
 
 float Venda::getSubTotal() const
 {
@@ -32,7 +40,3 @@ void Venda::setDataCompra(const string novaDataCompra)
     dataCompra = novaDataCompra;
 }
 
-void Vendas() 
-{
-    
-}

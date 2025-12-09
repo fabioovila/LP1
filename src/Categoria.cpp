@@ -1,4 +1,5 @@
 #include "Categoria.h"
+#include <sstream>
 
 string Categoria::getNome() const 
 {
@@ -22,7 +23,8 @@ void Categoria::setLocalizacao(const string novaLocalizacao)
     localizacao = novaLocalizacao;
 }
 
-void Categorias() 
-{
-    
+string Categoria::toString() const {
+    stringstream ss;
+    ss << "ID: " << getId() << " | Nome: " << nome << " | Localizacao: " << localizacao;
+    return ss.str();
 }

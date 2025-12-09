@@ -1,4 +1,15 @@
 #include "Fornecedor.h"
+#include <sstream>
+
+Fornecedor::~Fornecedor() {}
+
+std::string Fornecedor::toString() const {
+    std::stringstream ss;
+    ss << Pessoa::toString();
+    ss << " | Tipo: " << getTipo();
+    
+    return ss.str();
+}
 
 string Fornecedor::getTipo() const
 {
@@ -9,9 +20,4 @@ void Fornecedor::setTipo(const string novoTipo)
 {
     // ainda tenho que implementar tratamento de excecoes
     tipo = novoTipo;
-}
-
-void Fornecedores() 
-{
-    
 }
