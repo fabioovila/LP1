@@ -4,7 +4,7 @@
 #include <string>
 
 class Pessoa : public Base {
-private:
+protected:
     string nome;
     string telefone;
 public:
