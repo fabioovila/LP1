@@ -43,7 +43,7 @@ bool validarLogin()
     cin.ignore();
 
     // cout << "\ntentativa = " << tentativa << endl << endl;
-    ifstream file("texts/usuarios.txt");
+    ifstream file("usuarios.txt");
     string linha;
     
     while (getline(file, linha)) {
@@ -75,6 +75,7 @@ void menuGenerico(string setor)
     cout << "\n[2] - Elencar " << setor << "s";
     cout << "\n[3] - Atualizar " << setor;
     cout << "\n[4] - Excluir " << setor;
+    cout << "\n[0] - Sair desse setor\n";
 
     cout << "\nQual opcao desse setor deseja acessar? ";
 }
@@ -83,31 +84,7 @@ void Categorias() {}
 void Clientes() {}
 void Fornecedores() {}
 
-void Funcionarios(Funcionario user) 
-{
-    // int opcaofuncionario = -1;
 
-    // while (opcaofuncionario != 0) 
-    // {
-    //     menuGenerico("Funcionário");
-    //     cin >> opcaofuncionario;
-        
-    //     switch (opcaofuncionario) {
-        //         case 1:
-        //             user.criar();
-        //             break; 
-        //         case 2:
-        //             user.ler();
-        //             break;
-        //         case 3:
-    //             user.atualizar();
-    //             break;
-    //         case 4:
-    //             user.excluir();
-    //             break;
-    //     }
-    // }
-}
 
 void Localizacoes() {}
 void Pecas() {}
@@ -123,7 +100,7 @@ void menuUsuario()
     cout << "\n[0] - Encerrar Programa" << endl;
 }  
 
-void iniciarMenu(Funcionario user)
+void iniciarMenu()
 {
     int opcao = -1;
     while (opcao != 0)
@@ -148,7 +125,7 @@ void iniciarMenu(Funcionario user)
                 break;
             case 4:
                 cout << "Setor Funcionarios selecionado" << endl;
-                Funcionarios(user);
+                Funcionarios();
                 break;
             case 5:
                 cout << "Setor Localização selecionado" << endl;

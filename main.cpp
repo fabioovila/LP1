@@ -16,9 +16,6 @@
 
 using namespace std;
 
-const string ESCURO = "\033[40m\033[37m";
-const string CLARO = "\033[47m\033[30m";
-
 int main() 
 {
     limparTerminal();
@@ -26,12 +23,13 @@ int main()
     // suposto validador de Login
     while (!validado) validado = validarLogin();
     
+    // construtor para userLogado, nao para novo usuario
     Funcionario userLogado(nomeUsuario, telefoneUsuario, loginUsuario);
     
     // mostrando polimorfismo abaixo
     cout << "Bem vindo, " << userLogado.getNome() << "!" << endl; 
 
-    iniciarMenu(userLogado);
+    iniciarMenu();
 
     cout << "Programa encerrado! :)" << endl;
 }

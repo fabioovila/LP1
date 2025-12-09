@@ -1,3 +1,0 @@
-# ordem: nome, categoria, preco
-bobina:avulsos,R$13.50
-vela:motor,R$199.99
