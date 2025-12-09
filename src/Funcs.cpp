@@ -79,11 +79,12 @@ void cadastrarFuncionario()
 void elencarFuncionarios()
 {
     const vector<Funcionario*>& lista = repoFuncionarios.listarFuncionarios();
-
+    cout << endl << "\nLISTA DE FUNCIONARIOS\n\n";
     for (const Funcionario* f : lista) {
         cout << "Nome: " << f->getNome() << " | Telefone: " << f->getTelefone() 
              << " | Login: " << f->getLogin() << " | Tema: " << f->getTema() << endl;
     }
+    cout << endl;
 }
 
 void atualizarFuncionario()
@@ -218,7 +219,7 @@ void iniciarMenu()
             case 0:
                 break;
             default:
-                cout << "Nenhum setor correspondente (default)" << endl;
+                cout << "Nenhum setor correspondente encontrado" << endl;
                 break;
         }
     }

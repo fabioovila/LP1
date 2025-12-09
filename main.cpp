@@ -21,17 +21,15 @@ FuncionarioRepositorio repoFuncionarios;
 
 int main() 
 {
+
+    limparTerminal();
+    while (!validado) validado = validarLogin();
     limparTerminal();
 
-    // suposto validador de Login
-    while (!validado) validado = validarLogin();
-    
-    // mostrando polimorfismo abaixo
     cout << "Bem vindo, " << nomeUsuario << "!" << endl; 
 
-    // implementacao esta na funcs.cpp
-    iniciarMenu();
+    iniciarMenu(); // implementacao esta na funcs.cpp
 
-    // o arquivo usuarios.txt é atualizado ao terminar o programa
-    cout << "Se houve alteracoes ao arquivo 'usuarios.txt', foram concluidas agora!\n" << "Programa encerrado! :)" << endl;
+    cout << "Se houve alteracoes ao arquivo 'usuarios.txt', foram concluidas agora!\n";
+    cout << "Programa encerrado! :)";
 }
