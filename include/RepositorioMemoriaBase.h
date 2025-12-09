@@ -17,11 +17,9 @@ protected:
     vector<T*> lista;
     string nomeEntidade; 
 
-    // Métodos Abstratos (Pure Virtual) que as classes filhas devem implementar:
     virtual void validarEntidade(const T& entidade) const = 0;
-    virtual T* coletarDadosCriacao() = 0; // Cria e valida a nova entidade
-    virtual void coletarDadosAtualizacao(T* entidade) = 0; // Coleta os novos dados para a entidade existente
-
+    virtual T* coletarDadosCriacao() = 0; 
+    virtual void coletarDadosAtualizacao(T* entidade) = 0; 
 public:
     RepositorioMemoriaBase(const string& nome) : nomeEntidade(nome) {}
 
@@ -35,8 +33,6 @@ public:
         }
         return nullptr;
     }
-
-    // Implementação Genérica do CRUD
     
     void criar() override {
         T* novo = nullptr;
@@ -46,7 +42,7 @@ public:
             cout << "\n" << nomeEntidade << " criado com sucesso (ID: " << novo->getId() << ")" << endl;
         } catch (const exception& e) {
             cout << "\nErro ao criar " << nomeEntidade << ": " << e.what() << endl;
-            delete novo; // Se falhou, deleta o objeto alocado
+            delete novo; 
         }
     }
 
@@ -81,7 +77,7 @@ public:
             if (existente == nullptr) throw IdNaoEncontradoException(idBusca, nomeEntidade);
             
             coletarDadosAtualizacao(existente);
-            validarEntidade(*existente); // Revalida a entidade após a atualização
+            validarEntidade(*existente); 
 
             cout << "\n" << nomeEntidade << " ID " << idBusca << " atualizado com sucesso!" << endl;
         } catch (const exception& e) {
