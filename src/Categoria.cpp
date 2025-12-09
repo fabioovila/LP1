@@ -21,3 +21,8 @@ void Categoria::setLocalizacao(const string novaLocalizacao)
     // ainda tenho que implementar tratamento de excecoes
     localizacao = novaLocalizacao;
 }
+
+void Categorias() 
+{
+    
+}

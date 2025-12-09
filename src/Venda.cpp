@@ -31,3 +31,8 @@ void Venda::setDataCompra(const string novaDataCompra)
     // ainda tenho que implementar tratamento de excecoes
     dataCompra = novaDataCompra;
 }
+
+void Vendas() 
+{
+    
+}

@@ -29,6 +29,7 @@ int main()
     // mostrando polimorfismo abaixo
     cout << "Bem vindo, " << userLogado.getNome() << "!" << endl; 
 
+    // implementacao esta na funcs.cpp
     iniciarMenu();
 
     cout << "Programa encerrado! :)" << endl;

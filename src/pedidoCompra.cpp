@@ -15,3 +15,8 @@ void pedidoCompra::setValor(const float novoValor)
     // ainda tenho que implementar tratamento de excecoes
     valor = novoValor;
 }
+
+void PedidosCompra() 
+{
+    
+}

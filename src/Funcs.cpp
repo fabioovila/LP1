@@ -80,18 +80,7 @@ void menuGenerico(string setor)
     cout << "\nQual opcao desse setor deseja acessar? ";
 }
 
-void Categorias() {}
-void Clientes() {}
-void Fornecedores() {}
-
-
-
-void Localizacoes() {}
-void Pecas() {}
-void PedidosCompra() {}
-void Vendas() {}
-
-void menuUsuario()
+void opcoesUsuario()
 {
     cout << "\n[1] - Categorias" << "\n[2] - Clientes";
     cout << "\n[3] - Fornecedor" << "\n[4] - Funcionarios";
@@ -105,42 +94,34 @@ void iniciarMenu()
     int opcao = -1;
     while (opcao != 0)
     {
-        menuUsuario();
+        opcoesUsuario();
         cout << "\nQual menu deseja acessar agora, " << nomeUsuario << "? ";
         cin >> opcao;
         cout << endl;
         
         switch (opcao) {
             case 1:
-                cout << "Setor Categorias selecionado" << endl;
                 Categorias();
                 break; 
             case 2:
-                cout << "Setor Clientes selecionado" << endl;
                 Clientes();
                 break;
             case 3:
-                cout << "Setor Fornecedores selecionado" << endl;
                 Fornecedores();
                 break;
             case 4:
-                cout << "Setor Funcionarios selecionado" << endl;
                 Funcionarios();
                 break;
             case 5:
-                cout << "Setor Localização selecionado" << endl;
                 Localizacoes();
                 break;
             case 6:
-                cout << "Setor Peças selecionado" << endl;
                 Pecas();
                 break;
             case 7:
-                cout << "Setor Pedidos de Compra selecionado" << endl;
                 PedidosCompra();
                 break;
             case 8:
-                cout << "Setor Vendas selecionado" << endl;
                 Vendas();
                 break;
             case 0:

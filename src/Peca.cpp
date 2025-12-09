@@ -32,3 +32,8 @@ void Peca::setCategoria(const string novaCategoria)
     // ainda tenho que implementar tratamento de excecoes
     categoria = novaCategoria;
 }
+
+void Pecas() 
+{
+    
+}

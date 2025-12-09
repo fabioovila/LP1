@@ -11,3 +11,7 @@ void Fornecedor::setTipo(const string novoTipo)
     tipo = novoTipo;
 }
 
+void Fornecedores() 
+{
+    
+}

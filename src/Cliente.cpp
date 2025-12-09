@@ -10,3 +10,8 @@ void Cliente::setPreferencia(const string novaPreferencia)
     // ainda tenho que implementar tratamento de excecoes
     preferencia = novaPreferencia;
 }
+
+void Clientes() 
+{
+    
+}
