@@ -33,5 +33,5 @@ int main()
     iniciarMenu();
 
     // o arquivo usuarios.txt é atualizado ao terminar o programa
-    cout << "Programa encerrado! :)" << endl;
+    cout << "Se houve alteracoes ao arquivo 'usuarios.txt', foram concluidas agora!\n" << "Programa encerrado! :)" << endl;
 }

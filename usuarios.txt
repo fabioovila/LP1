@@ -1,3 +1,1 @@
 fabioovila:Fabio,12345678;escuro
-jerff:Jerfesson,01020304;escuro
-vitfal:Vitoria,918273645;claro

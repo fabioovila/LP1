@@ -86,6 +86,14 @@ void FuncionarioRepositorio::atualizar(const Funcionario& funcionarioAtualizado)
 }
 
 bool FuncionarioRepositorio::removerPorLogin(const std::string& login) {
+    if (listaFuncionarios.size() == 1) {
+        if (listaFuncionarios[0]->getLogin() == login) {
+            //throw UltimoFuncionarioException();
+            cout << "Lista de funcionarios nao pode ficar vazia!";
+            return false;
+        }
+    }
+    
     auto it = std::remove_if(listaFuncionarios.begin(), listaFuncionarios.end(),
         [&login](Funcionario* f) {
             if (f->getLogin() == login) {

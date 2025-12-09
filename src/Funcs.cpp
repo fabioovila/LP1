@@ -162,7 +162,7 @@ void Funcionarios()
 
 void menuGenerico(string setor) 
 {
-    cout << "\n[1] - Criar " << setor;
+    cout << "[1] - Criar " << setor;
     cout << "\n[2] - Elencar " << setor << "s";
     cout << "\n[3] - Atualizar " << setor;
     cout << "\n[4] - Excluir " << setor;
