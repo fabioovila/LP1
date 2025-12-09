@@ -30,6 +30,7 @@ int main()
 
     iniciarMenu(); // implementacao esta na funcs.cpp
 
-    cout << "Se houve alteracoes ao arquivo 'usuarios.txt', foram concluidas agora!\n";
-    cout << "Programa encerrado! :)";
+    if (repoFuncionarios.houveAlteracao()) cout << "Alteracoes ao arquivo 'usuarios.txt' salvas!\n";
+
+    cout << "\nPrograma encerrado! :)" << endl;
 }

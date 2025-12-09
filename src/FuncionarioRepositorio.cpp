@@ -68,8 +68,14 @@ Funcionario* FuncionarioRepositorio::buscarPorLogin(const std::string login) {
 
 void FuncionarioRepositorio::adicionar(const Funcionario& novoFuncionario)
 {
+    if (buscarPorLogin(novoFuncionario.getLogin()) != nullptr) {
+        throw LoginDuplicadoException(novoFuncionario.getLogin());
+    }
+
     Funcionario* copia = new Funcionario(novoFuncionario.getNome(), novoFuncionario.getTelefone(), novoFuncionario.getLogin(), novoFuncionario.getTema());
     listaFuncionarios.push_back(copia);
+
+    dadosAlterados = true;
 }
 
 void FuncionarioRepositorio::atualizar(const Funcionario& funcionarioAtualizado)
@@ -80,6 +86,8 @@ void FuncionarioRepositorio::atualizar(const Funcionario& funcionarioAtualizado)
             existente->setTema(funcionarioAtualizado.getTema());
             existente->setNome(funcionarioAtualizado.getNome());
             existente->setTelefone(funcionarioAtualizado.getTelefone());
+            
+            dadosAlterados = true;
             return;
         }
     }
@@ -106,5 +114,7 @@ bool FuncionarioRepositorio::removerPorLogin(const std::string& login) {
     bool removido = (it != listaFuncionarios.end());
     listaFuncionarios.erase(it, listaFuncionarios.end());
 
+    if(removido) dadosAlterados = true;
+    
     return removido;
 }

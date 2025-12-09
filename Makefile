@@ -31,4 +31,5 @@ clean:
 	rm -rf $(OBJS) $(EXECUTAVEL)
 
 run: $(EXECUTAVEL)
+	clear
 	./$(EXECUTAVEL)

@@ -14,6 +14,7 @@
 #include "Venda.h"
 #include "Funcs.h"
 #include "FuncionarioRepositorio.h"
+#include "Excecoes.h"
 
 using namespace std;
 
@@ -61,19 +62,31 @@ bool validarLogin()
 void cadastrarFuncionario()
 {
     string nome, login, telefone, tema;
+    
     cout << "Qual e o nome do novo usuario? ";
-    cin >> nome;
+    getline(cin, nome); 
+    
     cout << "Qual sera o login dele? ";
-    cin >> login;
+    cin >> login; 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+
     cout << "Qual e o telefone dele? ";
     cin >> telefone;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     cout << "Qual e o tema preferido dele? ";
     cin >> tema;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-    Funcionario novo(nome, telefone, login, tema);
-
-    repoFuncionarios.adicionar(novo);
-    cout << "\nFuncionario cadastrado na memoria!" << endl;
+    try {
+        Funcionario novo(nome, telefone, login, tema);
+        repoFuncionarios.adicionar(novo); 
+        cout << "\nFuncionario cadastrado na memoria!" << endl;
+    } catch (const LoginDuplicadoException& e) {
+        cerr << endl << e.what() << endl << endl << "Criacao de Funcionario CANCELADA\n" << endl;
+    } catch (const std::exception& e) {
+        cerr << endl << e.what() << endl << endl;
+    }
 }
 
 void elencarFuncionarios()
@@ -132,7 +145,12 @@ void Funcionarios()
     while (opcaofuncionario != 0) 
     {
         menuGenerico("Funcionário");
-        cin >> opcaofuncionario;
+        if (!(cin >> opcaofuncionario)) {
+            cin.clear();
+            opcaofuncionario = -1;
+        }
+
+        cin.ignore();
         
         switch (opcaofuncionario) {
             case 1:
@@ -163,6 +181,7 @@ void Funcionarios()
 
 void menuGenerico(string setor) 
 {
+    cout << "===========================" << endl;
     cout << "[1] - Criar " << setor;
     cout << "\n[2] - Elencar " << setor << "s";
     cout << "\n[3] - Atualizar " << setor;

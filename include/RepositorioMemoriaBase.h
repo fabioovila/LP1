@@ -43,15 +43,15 @@ public:
         try {
             novo = coletarDadosCriacao(); 
             lista.push_back(novo);
-            cout << "\n" << nomeEntidade << " criado com sucesso! (ID: " << novo->getId() << ")" << endl;
+            cout << "\n" << nomeEntidade << " criado com sucesso (ID: " << novo->getId() << ")" << endl;
         } catch (const exception& e) {
-            cout << "\nERRO ao criar " << nomeEntidade << ": " << e.what() << endl;
+            cout << "\nErro ao criar " << nomeEntidade << ": " << e.what() << endl;
             delete novo; // Se falhou, deleta o objeto alocado
         }
     }
 
     void ler() override {
-        cout << "\n--- LISTA DE " << nomeEntidade << "S ---" << endl;
+        cout << "\n--- Lista " << nomeEntidade << "s ---" << endl;
         if (lista.empty()) {
             cout << "Nenhum registro cadastrado." << endl;
             return;
@@ -66,7 +66,7 @@ public:
         ler(); 
         if (lista.empty()) return;
 
-        cout << "\n--- ATUALIZAR " << nomeEntidade << " ---" << endl;
+        cout << "\nAtualizar " << nomeEntidade << endl;
         int idBusca;
         cout << "Insira o ID do " << nomeEntidade << " que deseja atualizar: ";
         if (!(cin >> idBusca)) {
@@ -85,7 +85,7 @@ public:
 
             cout << "\n" << nomeEntidade << " ID " << idBusca << " atualizado com sucesso!" << endl;
         } catch (const exception& e) {
-            cout << "\nERRO ao atualizar " << nomeEntidade << ": " << e.what() << endl;
+            cout << "\nErro ao atualizar " << nomeEntidade << ": " << e.what() << endl;
         }
     }
 
@@ -94,7 +94,7 @@ public:
         ler();
         if (lista.empty()) return;
 
-        cout << "\n--- EXCLUIR " << nomeEntidade << " ---" << endl;
+        cout << "\nExcluir " << nomeEntidade << endl;
         int idBusca;
         cout << "Insira o ID do " << nomeEntidade << " que deseja excluir: ";
         if (!(cin >> idBusca)) {
@@ -116,9 +116,9 @@ public:
             lista.erase(it, lista.end());
 
             if (!removido) throw IdNaoEncontradoException(idBusca, nomeEntidade);
-            cout << "\n" << nomeEntidade << " ID " << idBusca << " excluído com sucesso!" << endl;
+            cout << "\n" << nomeEntidade << " ID " << idBusca << " excluido com sucesso!" << endl;
         } catch (const exception& e) {
-            cout << "\nERRO ao excluir " << nomeEntidade << ": " << e.what() << endl;
+            cout << "\nErro ao excluir " << nomeEntidade << ": " << e.what() << endl;
         }
     }
 };

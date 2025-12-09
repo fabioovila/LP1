@@ -20,3 +20,9 @@ public:
     ValorInvalidoException(const std::string& campo)
         : std::runtime_error("Erro: O campo '" + campo + "' deve ter um valor positivo.") {}
 };
+
+class LoginDuplicadoException : public std::runtime_error {
+public:
+    LoginDuplicadoException(const std::string& login)
+        : std::runtime_error("Erro: O login '" + login + "' ja existe no sistema.") {}
+};
