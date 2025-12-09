@@ -9,7 +9,7 @@ FLAGS = -Wall -Wextra -I$(INCLUDE_DIR)
 OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/Base.o $(OBJ_DIR)/Categoria.o $(OBJ_DIR)/Cliente.o \
        $(OBJ_DIR)/Fornecedor.o $(OBJ_DIR)/Funcionario.o $(OBJ_DIR)/Localizacao.o \
        $(OBJ_DIR)/Peca.o $(OBJ_DIR)/pedidoCompra.o $(OBJ_DIR)/Pessoa.o $(OBJ_DIR)/Venda.o \
-	   $(OBJ_DIR)/Funcs.o
+	   $(OBJ_DIR)/Funcs.o $(OBJ_DIR)/FuncionarioRepositorio.o 
 
 all: $(EXECUTAVEL)
 

@@ -9,8 +9,7 @@ private:
     string login;
     string tema;
 public:
-    Funcionario(string nome, string telefone, string login) : Pessoa(nome, telefone), login(login) {}
-    Funcionario(string nome, string telefone, string login, string tema);
+    Funcionario(string nome, string telefone, string login, string tema) : Pessoa(nome, telefone), login(login), tema(tema) {}
 
     string getLogin() const;
     string getTema() const;

@@ -13,12 +13,14 @@
 #include "Pessoa.h"
 #include "Venda.h"
 #include "Funcs.h"
+#include "FuncionarioRepositorio.h"
 
 using namespace std;
 
 string nomeUsuario, telefoneUsuario, loginUsuario, temaUsuario;
-
 bool validado = false;
+
+extern FuncionarioRepositorio repoFuncionarios;
 
 const string ESCURO = "\033[40m\033[37m";
 const string CLARO = "\033[47m\033[30m";
@@ -42,32 +44,121 @@ bool validarLogin()
     cin >> tentativa;
     cin.ignore();
 
-    // cout << "\ntentativa = " << tentativa << endl << endl;
-    ifstream file("usuarios.txt");
-    string linha;
-    
-    while (getline(file, linha)) {
-        size_t doispontos = linha.find(':');
-        string login_arquivo = linha.substr(0, doispontos);
-        
-        if (login_arquivo == tentativa) {
-            loginUsuario = login_arquivo;
+    Funcionario* usuarioLogado = repoFuncionarios.fazerLogin(tentativa);
 
-            size_t virgula = linha.find(',');
-            size_t pontoevirgula = linha.find(';');
-            
-            nomeUsuario = linha.substr(doispontos + 1, virgula - (doispontos + 1));
-            telefoneUsuario = linha.substr(virgula + 1, pontoevirgula - (virgula + 1));
-            temaUsuario = linha.substr(pontoevirgula + 1);
-            
-            aplicarTema(temaUsuario);
-            
-            return true;
-        }
+    if(usuarioLogado != nullptr) {
+        nomeUsuario = usuarioLogado->getNome();
+        temaUsuario = usuarioLogado->getTema();
+
+        aplicarTema(temaUsuario);
+        return true;
     }
+
     cout << "\nLogin não encontrado :(" << endl;
     return false;
 }
+
+void cadastrarFuncionario()
+{
+    string nome, login, telefone, tema;
+    cout << "Qual e o nome do novo usuario? ";
+    cin >> nome;
+    cout << "Qual sera o login dele? ";
+    cin >> login;
+    cout << "Qual e o telefone dele? ";
+    cin >> telefone;
+    cout << "Qual e o tema preferido dele? ";
+    cin >> tema;
+
+    Funcionario novo(nome, telefone, login, tema);
+
+    repoFuncionarios.adicionar(novo);
+    cout << "\nFuncionario cadastrado na memoria!" << endl;
+}
+
+void elencarFuncionarios()
+{
+    const vector<Funcionario*>& lista = repoFuncionarios.listarFuncionarios();
+
+    for (const Funcionario* f : lista) {
+        cout << "Nome: " << f->getNome() << " | Telefone: " << f->getTelefone() 
+             << " | Login: " << f->getLogin() << " | Tema: " << f->getTema() << endl;
+    }
+}
+
+void atualizarFuncionario()
+{
+    string loginBusca;
+    cout << "Insira o login do usuario que deseja atualizar: ";
+    cin >> loginBusca;
+
+    Funcionario* existente = repoFuncionarios.buscarPorLogin(loginBusca);
+
+    if (existente == nullptr) {
+        cout << "Usuario nao encontrado" << endl;
+        return;
+    }
+
+    string novoTema;
+    cout << "Novo tema para " << existente->getNome() << ": ";
+    cin >> novoTema;
+
+    existente->setTema(novoTema);
+
+    repoFuncionarios.atualizar(*existente);
+
+    cout << "Tema de " << existente->getNome() << " atualizado na memoria!" << endl;
+}
+
+void excluirFuncionario()
+{
+    extern FuncionarioRepositorio repoFuncionarios; 
+    
+    string loginBusca;
+    cout << "Insira o login do usuario que deseja excluir: ";
+    cin >> loginBusca;
+
+    bool sucesso = repoFuncionarios.removerPorLogin(loginBusca); 
+    
+    if (sucesso) cout << "\nFuncionario com login '" << loginBusca << "' excluido da memoria!" << endl;
+    else cout << "\nUsuario com login '" << loginBusca << "' nao encontrado." << endl;
+}
+
+void Funcionarios() 
+{
+    int opcaofuncionario = -1;
+
+    while (opcaofuncionario != 0) 
+    {
+        menuGenerico("Funcionário");
+        cin >> opcaofuncionario;
+        
+        switch (opcaofuncionario) {
+            case 1:
+                cadastrarFuncionario();
+                break; 
+                
+            case 2:
+                elencarFuncionarios();
+                break;
+                
+            case 3:
+                atualizarFuncionario();
+                break;
+                
+            case 4:
+                excluirFuncionario();
+                break;
+                
+            case 0:
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
 
 void menuGenerico(string setor) 
 {

@@ -13,8 +13,11 @@
 #include "Pessoa.h"
 #include "Venda.h"
 #include "Funcs.h"
+#include "FuncionarioRepositorio.h"
 
 using namespace std;
+
+FuncionarioRepositorio repoFuncionarios;
 
 int main() 
 {
@@ -23,14 +26,12 @@ int main()
     // suposto validador de Login
     while (!validado) validado = validarLogin();
     
-    // construtor para userLogado, nao para novo usuario
-    Funcionario userLogado(nomeUsuario, telefoneUsuario, loginUsuario);
-    
     // mostrando polimorfismo abaixo
-    cout << "Bem vindo, " << userLogado.getNome() << "!" << endl; 
+    cout << "Bem vindo, " << nomeUsuario << "!" << endl; 
 
     // implementacao esta na funcs.cpp
     iniciarMenu();
 
+    // o arquivo usuarios.txt é atualizado ao terminar o programa
     cout << "Programa encerrado! :)" << endl;
 }
