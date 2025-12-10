@@ -1,3 +1,2 @@
-fabioovila:Fabio,12345678;escuro
-vitfal:Vitoria,918273645;claro
+fabioovila:Fabio,12345678;claro
 jerff:Jerffesson,01020304;escuro

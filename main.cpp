@@ -21,7 +21,6 @@ FuncionarioRepositorio repoFuncionarios;
 
 int main() 
 {
-
     limparTerminal();
     while (!validado) validado = validarLogin();
     limparTerminal();
