@@ -3,7 +3,7 @@
 
 # Visão Geral
 
-Este projeto é uma aplicação de gestão (CRUD) desenvolvida em C++, utilizando rigorosamente os principais conceitos da Programação Orientada a Objetos (POO) e Padrões de Projeto (Repository Pattern) para garantir código modular, coeso e reutilizável. O contexto da aplicação envolve o cadastro, consulta, alteração e remoção de dados de um sistema de gestão de estoque e vendas.
+Este projeto é uma aplicação de gestão (CRUD) desenvolvida em C++, utilizando os principais conceitos da Programação Orientada a Objetos (Abstração, Encapsulamento, Herança e Polimorfismo). O contexto da aplicação envolve o cadastro, consulta, alteração e remoção de dados de um sistema de gestão de estoque e vendas.
 
 # Requisitos Mínimos
 *Mínimo 11 Classes* -> O projeto possui 20 Classes/Interfaces Próprias. Isso inclui 8 Entidades, 8 Repositórios Concretos, 2 Classes Abstratas e 2 Interfaces de Programação.
