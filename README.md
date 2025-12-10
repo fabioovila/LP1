@@ -27,7 +27,7 @@ Link para o Diagrama Mermaid: https://www.mermaidchart.com/app/projects/69ceeb0f
 
 # Instruções para Rodar a Aplicação
 
-Executar os seguintes comandos no terminal:
+Executar os seguintes comandos no codespace do github:
 
 1º -> "make"
 2º -> "make run"
