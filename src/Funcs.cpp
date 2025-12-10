@@ -68,15 +68,12 @@ void cadastrarFuncionario()
     
     cout << "Qual sera o login dele? ";
     cin >> login; 
-    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
 
     cout << "Qual e o telefone dele? ";
     cin >> telefone;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Qual e o tema preferido dele? ";
     cin >> tema;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     try {
         Funcionario novo(nome, telefone, login, tema);
